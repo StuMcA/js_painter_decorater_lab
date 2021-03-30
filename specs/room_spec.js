@@ -23,6 +23,12 @@ describe('Room', function() {
         assert.strictEqual(result, false);
     })
 
+    it('should increase amount painted', function() {
+        room.increaseAmountPainted(50);
+        const result = room.amountPainted;
+        assert.strictEqual(result, 50);
+    })
+
     xit('should be able to be painted', function() {
         // const result 
     })

@@ -29,15 +29,16 @@ Decorator.prototype.enoughPaint = function(paintColour, room) {
 }
 
 Decorator.prototype.reducePaint = function(paintColour, room) {
+    let paintNeeded = room.size - room.amountPainted;
     for (paintCan of this.stock) {
-        let paintNeeded = room.size - room.amountPainted;
         if (paintCan.colour === paintColour && paintNeeded > 0) {
             let paintUsed = Math.min(paintCan.size, paintNeeded);
             paintCan.size -= paintUsed;
             room.increaseAmountPainted(paintUsed);
+            paintNeeded -= paintUsed;
         };
     };
-    console.log(room.amountPainted);
+    console.log('amount painted', room.amountPainted);
     console.log(this.stock);
 };
 module.exports = Decorator;

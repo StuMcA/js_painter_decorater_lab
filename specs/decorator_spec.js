@@ -29,4 +29,16 @@ describe('Decorator', function() {
         const result = decorator.stock;
         assert.deepStrictEqual(result, [paintCan]);
     });
+
+    it('should have enough paint', function() {
+        decorator.getPaint(paintCan, 5);
+        const result = decorator.enoughPaint(room);
+        assert.strictEqual(result, true);
+    })
+
+    it('should not have enough paint', function() {
+        decorator.getPaint(paintCan, 1);
+        const result = decorator.enoughPaint(room);
+        assert.strictEqual(result, false);
+    })
 })

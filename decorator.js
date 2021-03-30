@@ -13,7 +13,12 @@ Decorator.prototype.getPaint = function(paintCan, amount){
 }
 
 Decorator.prototype.enoughPaint = function(room){
-    if (this.stock >= room){
+    let total = 0;
+    for (paintCan of this.stock){
+        total = total + paintCan.size;
+    }
+
+    if (total >= room.size){
         return true;
     } else {
         return false;

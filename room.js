@@ -5,10 +5,12 @@ const Room = function(name, size) {
     this.amountPainted = 0;
 }
 
-Room.prototype.complete = function() {
-    if (this.size === this.amountPainted){
-        this.painted = true;
-    }
+Room.prototype.increaseAmountPainted = function(paintUsed) {
+    this.amountPainted += paintUsed;
 }
 
-module.exports = Room
+Room.prototype.complete = function() {
+    this.painted = true;
+}
+
+module.exports = Room;

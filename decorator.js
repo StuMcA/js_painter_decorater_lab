@@ -19,6 +19,7 @@ Decorator.prototype.totalPaint = function(paintColour) {
             total = total + paintCan.size;
         };
     };
+    return total;
 };
 
 Decorator.prototype.enoughPaint = function(paintColour, room) {

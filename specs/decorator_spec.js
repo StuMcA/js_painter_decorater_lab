@@ -32,13 +32,13 @@ describe('Decorator', function() {
 
     it('should have enough paint', function() {
         decorator.getPaint(paintCan, 5);
-        const result = decorator.enoughPaint(room);
+        const result = decorator.enoughPaint('royal blue', room);
         assert.strictEqual(result, true);
     })
 
     it('should not have enough paint', function() {
         decorator.getPaint(paintCan, 1);
-        const result = decorator.enoughPaint(room);
+        const result = decorator.enoughPaint('royal blue', room);
         assert.strictEqual(result, false);
     })
 })

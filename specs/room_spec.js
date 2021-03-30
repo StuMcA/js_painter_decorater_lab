@@ -1,5 +1,5 @@
 const assert = require('assert');
-const oom = require()'../room.js';
+const Room = require('../room.js');
 
 describe('Room', function() {
     
@@ -24,7 +24,7 @@ describe('Room', function() {
     })
 
     xit('should be able to be painted', function() {
-        const result 
+        // const result 
     })
 
 })

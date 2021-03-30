@@ -12,16 +12,18 @@ Decorator.prototype.getPaint = function(paintCan, amount){
     }
 }
 
-Decorator.prototype.enoughPaint = function(room){
+Decorator.prototype.totalPaint = function(paintColour) {
     let total = 0;
     for (paintCan of this.stock){
-        total = total + paintCan.size;
-    }
+        if (paintCan.colour === paintColour) {
+            total = total + paintCan.size;
+        };
+    };
+};
 
-    if (total >= room.size){
-        return true;
-    } else {
-        return false;
-    }
+Decorator.prototype.enoughPaint = function(paintColour, room) {
+    let totalPaint = this.totalPaint(paintColour);
+    return totalPaint >= room.size;
+  
 }
 module.exports = Decorator;
